@@ -1,0 +1,17 @@
+<app-server></app-server>
+<app-alert></app-alert>
+<input type="text"
+        class="form-control"
+        (input)="onUpdateName($event)"
+        [(ngModel)] = "userName">
+<p> {{userName}}</p>
+<button class = "btn"
+        [disabled] = isEmpty
+        (click) = "onClickReset()">Reset </button>
+        <hr>
+<button class = "btn"
+      (click) = "onClickDisplay()">Display Details</button>
+<p *ngIf="isDisplay"> Secret word = "secret" </p>
+<p [ngClass]="{online: count>5}" 
+  [ngStyle]="{backgroundColor: count>5 ? 'blue' : 'transparent'}"
+  *ngFor= "let count of countArray">{{count}}</p>
